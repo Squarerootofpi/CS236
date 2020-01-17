@@ -1,0 +1,46 @@
+
+
+
+Schemes:
+Alpha(a,b,c)
+Bravo(a,b,c)
+Charlie(a,b,c)
+Delta(a,b,c)
+Echo(a,b,c)
+
+Facts:
+Echo('a','b','c').
+
+Rules:
+Alpha(x, y, z) :- Bravo(a, b, z), Charlie(x, y, c).
+Bravo(x, y, z) :- Charlie(a, x, z), Alpha(y, a, b).
+Charlie(x, y, z) :- Delta(z, y, x).
+Delta(x, y, z) :- Charlie(z, x, y).
+Delta(x, y, z) :- Echo(y, z, x).
+
+
+# Adjacency List correct format should be:
+# R0: R1, R2
+# R1: R0, R2
+# R2: R3, R4
+# R3: R2
+# R4:
+
+#Reverse list correct format should be:
+# R0: R1
+# R1: R0
+# R2: R0, R1, R3
+# R3: R2
+# R4: R2
+
+# Correct postorder is:
+# R1,R0,R3,R2,R4
+
+#Correct vertices (rule numbers) in SCCS
+# SCC1: R4
+# SCC2: R2,R3
+# SCC3: R0, R1
+
+
+Queries:
+Alpha(A,B,C)?

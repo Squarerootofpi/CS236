@@ -21,6 +21,7 @@ enum TokenType
 	UNDEFINED, ENDF
 };
 /*
+This implimentation works in g++ compiler, but not within VS, So I am choosing to not use it, although I like it better.
 static const char * EnumStrings[] = { "COMMA", "PERIOD", "Q_MARK", "LEFT_PAREN", "RIGHT_PAREN", "COLON", "COLON_DASH", "MULTIPLY",
 	"ADD", "SCHEMES", "FACTS", "RULES", "QUERIES", "ID", "STRING", "COMMENT", 
 	"UNDEFINED", "EOF" };
@@ -133,8 +134,8 @@ public:
 		ostringstream os;
 		string stype = "";
 
-		switch (type) //This looks ugly, but I tried like 10 other ways and kept on having problems in VS.
-		{
+		switch (type) //This looks ugly, but I tried like 10 other ways and kept on having problems in VS. 
+		{			//I decided to not divorce my IDE just yet. :)
 		case COMMA:
 			stype = "COMMA";
 			break;
@@ -204,15 +205,12 @@ public:
 	}
 
 	
-
+	//Different implimentation of getting verbal tokens
 	/*std::vector<string> EnumStrings{ "COMMA", "PERIOD", "Q_MARK", "LEFT_PAREN", "RIGHT_PAREN", "COLON", "COLON_DASH", "MULTIPLY",
 	"ADD", "SCHEMES", "FACTS", "RULES", "QUERIES", "ID", "STRING", "COMMENT",
 	, "EOF" };
 
-	string getTextForEnum(int enumVal)
-	{
-		return EnumStrings.at(enumVal);
-	}*/
+	*/
 
 };
 

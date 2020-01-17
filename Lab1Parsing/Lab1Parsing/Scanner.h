@@ -55,7 +55,7 @@ public:
 			}
 
 
-			*/
+		*/
 
 		start(inputFile);
 		//tostring called within main
@@ -337,7 +337,7 @@ public:
 		return false;
 	}
 
-
+	//Don't actually need, but might use in different version
 	/*void tokenize(ifstream& in, char name)
 	{	
 		Token t();
@@ -380,27 +380,7 @@ public:
 		cout << "Total Tokens = " << tokens.size();
 		return "done";
 	}
-	/*string toString()
-	{
-		ostringstream os;
-		for (int z = 0; z < tokens.size(); ++z)
-		{
-			os << tokens.at(z) << endl;
-		}
-		os << "Total Tokens = " << tokens.size();
-		cout << os.str();
-		return os.str();
-	}*/
-	/*friend ostream& operator<< (ostream& os, const Scanner& myScanner)
-	{
-		os << myScanner.toString();
-		return os;
-	}*/
 	
-	/*int size() 
-	{
-		return tokens.size();
-	}*/
 };
 
 
